@@ -1,12 +1,12 @@
 # CPP STL(Standard Template Libaray)
 
-** vector **
+**vector**
 
 * vector는 size와 capacity를 가진다.
 * capacity는 담을수 있는 양이다.
 * size는 담겨 있는 데이터 양이다.
 
-** queue **
+**queue**
 
 * size()는 담겨있는 데이터 수를 반환한다.
 * push()는 뒤에 추가한다.
