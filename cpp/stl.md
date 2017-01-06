@@ -45,12 +45,12 @@ int main(void)
 {
     std::vector<SomeData*> v1;
     std::cout << v1.capacity() << std::endl;
-    std::vector<SomeData> v2(100);
-    int v1_size = sizeof(v1);
+    std::vector<SomeData> v2(100); // capacity and size are 100
+    int v1_size = sizeof(v1); // size of is not related on elements
     int v2_size = sizeof(v2);
     SomeData* d = new SomeData();
-    v1.push_back(d);
-    v1.pop_back();
+    v1.push_back(d); // capacity = size = 1;
+    v1.pop_back();   // capacity = 1, size = 0
     std::queue<SomeData*> q1;
     int q1_size = sizeof(q1);
     d = new SomeData(1,1);
