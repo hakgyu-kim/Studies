@@ -28,7 +28,7 @@ class SomeClass
 {
 TEST_FRIENDS;
 private:
-    
+    int mPrivateMember;
 public:
     SomeClass(void);
 }
