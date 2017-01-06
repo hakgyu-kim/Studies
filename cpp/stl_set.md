@@ -9,9 +9,7 @@ nCount = mySet.size();
 
 * how to check if a element is in a set or not
 
-Because set can not have same element in a set, 
-
-when we count a element, it must be 1 or 0;
+Because set can not have same element in a set, when we count a element, it must be 1 or 0;
 
 ```cpp
     // if ruleElement has 0,1,2,3
