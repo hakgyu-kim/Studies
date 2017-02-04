@@ -32,3 +32,6 @@ __작업을 계속한다.__
 
 __merged commit은 rebase하면 정리된다.__
 > git rebase
+
+## how to solve conflict while merging
+> git mergetool
