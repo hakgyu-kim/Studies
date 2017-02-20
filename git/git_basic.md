@@ -42,4 +42,9 @@
 
 > git archive --format=zip --prefix=mysite-1.0/ 1.0 > mysite-1.0.zip
 
+* show difference
+
+> git diff
+
+> git diff -- cached
 
