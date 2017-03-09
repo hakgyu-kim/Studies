@@ -1,6 +1,7 @@
 ## doxygen format
 
-'''c
+http://stackoverflow.com/questions/11190838/doxygen-code-tag-kills-indentation
+```c
 /*! Sample:
 
 \code{.cpp}
@@ -17,4 +18,4 @@ void main(int argc, char** argv)
 }
 \endcode
 */
-'''
+```
