@@ -1,5 +1,6 @@
 ## doxygen format
 
+http://www.stack.nl/~dimitri/doxygen/
 http://stackoverflow.com/questions/11190838/doxygen-code-tag-kills-indentation
 ```c
 /*! Sample:
