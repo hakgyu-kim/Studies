@@ -6,20 +6,122 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication2
 {
+    public static class Extensions
+    {
+        public static int multiplication(this int var, int a, int b)
+        {
+            int result = var;
+            for ( int i = 0; i  < b; i++)
+            {
+                result *= a;
+            }
+            return result;
+        }
+    }
     class Parent
     {
         private int mId;
         public Parent(int id) {
-            mId = id;
+            this.mId = id;
+            Console.WriteLine("Parent()");
         }
-        public int getId() {
+        public virtual int getId() {
+            Console.WriteLine("Parent - getId");
             return mId;
+        }
+    }
+    class Child : Parent
+    {
+        public Child(int id) : base(id)
+        {
+            Console.WriteLine("Child()");
+        }
+        public override int getId() {
+            Console.WriteLine("Child - getId");
+            return base.getId();
+        }
+    }
+    class Car
+    {
+        private int maxSpeed;
+        private int speed = 0;
+        private string model;
+        public Car(int maxSpeed, string model)
+        {
+            this.maxSpeed = maxSpeed;
+            this.model = model;
+        }
+        public void showCarInformation()
+        {
+            Console.WriteLine(model + "의 현재 속도: " + speed + "km/h, 최대속도: " + maxSpeed);
+        }
+        public void speedUp(int increment)
+        {
+            if(speed + increment > maxSpeed)
+            {
+                Console.WriteLine("최대속도 " + maxSpeed + " km/h를 넘길수 없습니다.");
+            } else
+            {
+                speed += increment;
+                Console.WriteLine("Current speed is " + speed + " km/h.");
+            }
+        }
+        public void speedDown(int decrement)
+        {
+            if (speed - decrement < 0)
+            {
+                Console.WriteLine("Speed can't be low than 0");
+            }
+            else
+            {
+                speed -= decrement;
+                Console.WriteLine("Current speed is " + speed + " km/h.");
+            }
+        }
+    }
+    interface IMyInterface
+    {
+        void print();
+    }
+    interface IMyInterfaceB
+    {
+        void print();
+    }
+    class MyClass : IMyInterface, IMyInterfaceB
+    {
+        void IMyInterface.print()
+        {
+            Console.WriteLine("A-print()");
+        }
+
+        void IMyInterfaceB.print()
+        {
+            Console.WriteLine("B-print()");
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
+            MyClass m = new MyClass();
+            IMyInterface ia = m;
+            ia.print();
+            IMyInterfaceB ib = m;
+            ib.print();
+            Console.WriteLine("{0}", 5.multiplication(2, 3));
+            Parent p1 = new Parent(10);
+            p1.getId();
+            Child child = new Child(20);
+            child.getId();
+            Parent p2 = new Child(30);
+            p2.getId();
+            Car car = new ConsoleApplication2.Car(325, "Rambor");
+            car.showCarInformation();
+            car.speedUp(50);
+            car.speedUp(40);
+            car.speedUp(210);
+            car.speedUp(210);
+            car.speedDown(100);
             Parent p = new ConsoleApplication2.Parent(1);
             Console.WriteLine("hello {0}", p.getId());
             int a = 1;
@@ -64,7 +166,7 @@ namespace ConsoleApplication2
                 b = Convert.ToInt32(part[1]);
             } catch (Exception e)
             {
-                Console.WriteLine("text Not allowed ");
+                Console.WriteLine("text Not allowed ({0})", e.ToString());
             }
             Console.WriteLine("{0}, {1}", a, b);
         }
