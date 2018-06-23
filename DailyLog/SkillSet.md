@@ -14,13 +14,16 @@
   * Domain Driven Design
   * Refactoring
 * Algorithm / Problem Solving
-    * brust Force
-    * Divide and Conqure
-    * Dynamic Programming
-    * Greedy
-    * Tree
-    * Graph
+  * brust Force
+  * Divide and Conqure
+  * Dynamic Programming
+  * Greedy
+  * Tree
+  * Graph
 * Machine Learning
+* Big Data
+  * Hadoop
+  * Spark
 * Deap Learning
   * Caffe
     * LMDB
